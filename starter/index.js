@@ -96,3 +96,29 @@ for (var i = 0; i < length; i++){
   netTotal += finances[i][1];
   console.log(netTotal)
 };
+
+let months = finances.length
+let totalProfilLoss = 0
+let previousMonthAmount = 0
+let endOfMonthCash;
+let monthlyChange = 0
+let netTotal = 0
+let month;
+
+// 1
+console.log(months)
+
+// 2
+for(var i = 0; 1 < months; i++){
+
+  netTotal += finances[i][1];
+  if(i > 0){
+    previousMonthAmount = finances[i -1][1];
+    monthlyChange = finances[i][1] - previousMonthAmount; 
+  }
+  netTotalChange =+ monthlyChange;
+}
+
+const average = Math.round((netTotalChange / (months - 1)) * 100 ) / 100;
+
+console.log(average)
