@@ -1,4 +1,4 @@
-var finances = [
+const finances = [
   ['Jan-2010', 867884],
   ['Feb-2010', 984655],
   ['Mar-2010', 322013],
@@ -87,38 +87,50 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
-var length = finances.length;
-console.log(length)
-
-var netTotal= 0;
-
-for (var i = 0; i < length; i++){
-  netTotal += finances[i][1];
-  console.log(netTotal)
-};
-
-let months = finances.length
-let totalProfilLoss = 0
-let previousMonthAmount = 0
+const months = finances.length;
+let netTotal= 0;
+let previousMonthAmount = 0;
+let netTotalChange = 0;
 let endOfMonthCash;
-let monthlyChange = 0
-let netTotal = 0
-let month;
+let monthlyChange = 0;
+let currentMonth;
+let currentMonthAmount;
+let currentDate;
+let greatestIncrease = ['', 0]
+let greatestDecrease = ['', 1000000000]
 
-// 1
-console.log(months)
+for(var i = 0; i < months; i++){
+  currentMonth = finances[i];
+  currentDate = currentMonth[0];
+  currentMonthAmount = currentMonth[1];
+  netTotal += currentMonthAmount;
 
-// 2
-for(var i = 0; 1 < months; i++){
-
-  netTotal += finances[i][1];
   if(i > 0){
-    previousMonthAmount = finances[i -1][1];
-    monthlyChange = finances[i][1] - previousMonthAmount; 
+    monthlyChange = currentMonthAmount - previousMonthAmount;
   }
-  netTotalChange =+ monthlyChange;
+
+  previousMonthAmount = currentMonthAmount;
+  netTotalChange += monthlyChange;
+
+  if (greatestIncrease[1] < monthlyChange) {
+    greatestIncrease = [currentDate, monthlyChange];
+  }
+
+  if (greatestDecrease[1] > monthlyChange) {
+    greatestDecrease = [currentDate, monthlyChange];
+  }
 }
 
 const average = Math.round((netTotalChange / (months - 1)) * 100 ) / 100;
 
-console.log(average)
+
+const report = `
+  Financial Analysis \n
+  ------------------ \n
+  Total Months: ${months} \n
+  Total: $${netTotal} \n
+  Average Change: ${average} \n
+  Greatest Increase in Profit/Losses: ${greatestIncrease[0]} ($${greatestIncrease[1]}) \n
+  Greatest Decrease in Profit/Losses: ${greatestDecrease[0]} ($${greatestDecrease[1]})
+`
+console.log(report);
