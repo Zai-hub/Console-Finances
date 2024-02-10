@@ -3,20 +3,21 @@
 ## Description:
 Here, you will find the financial records of a company using their dataset. 
 
-You will find the following calculated: 
-Total Months
+You will find the following calculated:
+### 
+* Total Months
 ###
-Total
+* Total
 ###
-Average Change
+* Average Change
 ###
-Greatest Increase in Profits
+* Greatest Increase in Profits
 ###
-Losses for Feb 2012
+* Losses for Feb 2012
 ###
-Greatest Decrease in Profits
+* Greatest Decrease in Profits
 ###
-Losses for Sept 2013
+* Losses for Sept 2013
 
 ## Screenshot
 ![Console:](/assets/console.png)
