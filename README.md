@@ -1,6 +1,5 @@
 # Console-Finances
-descriotion, screenshot, link to deployed application.
-# Console-Finances
+
 ## Description:
 Here, you will find the financial records of a company using their dataset. 
 
@@ -20,9 +19,11 @@ Greatest Decrease in Profits
 Losses for Sept 2013
 
 ## Screenshot
-Console:
-```md![alt text](assets/Screenshot%202024-02-10%20at%2015.19.40.png)```
+![Console:](/assets/console.png)
 
+## Links
+[Git Reposatory](https://github.com/Zai-hub/Console-Finances)
+[Deployment Link]()
 
 ## License
 Console-finances is licensed by MIT.
